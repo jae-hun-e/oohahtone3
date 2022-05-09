@@ -5,6 +5,7 @@ function Header() {
     return (
         <>
             <Container>
+                <Hello>안녕하세요</Hello>
                 <Btn>
                     <Link to="/">Home</Link>
                 </Btn>
@@ -34,4 +35,8 @@ const Btn = styled.button`
     border-radius: 10px;
     margin: 10px;
     background-color: white;
+`;
+
+const Hello = styled.h3`
+    color: blue;
 `;
