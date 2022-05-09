@@ -1,18 +1,37 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import Fade from "react-reveal/Fade";
+import img1 from "../asset/img1.png";
 
 function Main() {
     return (
         <Box>
-            <First>
-                <div>first guide content</div>
-            </First>
-            <Second>
-                <div>second guide content</div>
-            </Second>
-            <Third>
-                <div>third guide content</div>
-            </Third>
+            <Fade left>{/* <image src={img1} /> */}</Fade>
+            <Fade right>
+                <Second>
+                    <div>second guide content</div>
+                </Second>
+            </Fade>
+            <Fade bottom>
+                <Third>
+                    <div>third guide content</div>
+                </Third>
+            </Fade>
+            <Fade left>
+                <First>
+                    <div>first guide content</div>
+                </First>
+            </Fade>
+            <Fade right>
+                <Second>
+                    <div>second guide content</div>
+                </Second>
+            </Fade>
+            <Fade bottom>
+                <Third>
+                    <div>third guide content</div>
+                </Third>
+            </Fade>
         </Box>
     );
 }

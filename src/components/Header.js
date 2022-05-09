@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-
 function Header() {
     return (
         <>
             <Container>
-                <Hello>안녕하세요</Hello>
+                <Logo src="" />
                 <Btn>
                     <Link to="/">Home</Link>
                 </Btn>
@@ -37,6 +36,7 @@ const Btn = styled.button`
     background-color: white;
 `;
 
-const Hello = styled.h3`
-    color: blue;
+const Logo = styled.image`
+    width: 200px;
+    height: 20px;
 `;
