@@ -5,19 +5,23 @@ function Header() {
     return (
         <>
             <Container>
-                <Hello>안녕하세요</Hello>
-                <Btn>
-                    <Link to="/">Home</Link>
-                </Btn>
-                <Btn>
-                    <Link to="/page1">page1</Link>
-                </Btn>
-                <Btn>
-                    <Link to="/page2">page2</Link>
-                </Btn>
-                <Btn>
-                    <Link to="/page3">page3</Link>
-                </Btn>
+                <Title>
+                    <img src="../logo.png"></img>
+                </Title>
+                <Nav>
+                    <Btn>
+                        <Link to="/">GUIDE</Link>
+                    </Btn>
+                    <Btn>
+                        <Link to="/page1">MY</Link>
+                    </Btn>
+                    <Btn>
+                        <Link to="/page2">OTHER</Link>
+                    </Btn>
+                    <Btn>
+                        <Link to="/page3">BUY</Link>
+                    </Btn>
+                </Nav>
             </Container>
         </>
     );
@@ -29,14 +33,23 @@ const Container = styled.div`
     justify-content: space-around;
     align-items: center;
     height: 50px;
+    box-shadow: 10px 5px 5px 1px rgba(0,0,0,.2);
 `;
+
+const Nav = styled.div`
+`
 
 const Btn = styled.button`
     border-radius: 10px;
     margin: 10px;
     background-color: white;
+    border: none;
+    :hover{
+        font-weight: bold;
+        text-decoration: underline;
+    }
 `;
 
-const Hello = styled.h3`
-    color: blue;
+const Title = styled.h3`
+    font-family: Arial, Helvetica, sans-serif;
 `;
