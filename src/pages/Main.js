@@ -10,7 +10,9 @@ function Main() {
         <Box>
             <Fade left>
                 {/* <BackgroundImg url={img1}></BackgroundImg> */}
-                <Img src={img1} />
+                <ImgTeg>
+                    <Img src={img1} />
+                </ImgTeg>
             </Fade>
             <Fade right>
                 <ImgTeg>
@@ -34,10 +36,6 @@ const Box = styled.div`
     flex-direction: column;
 `;
 
-const Img = styled.img`
-    width: 100%;
-    height: 800px;
-`;
 const BackgroundImg = styled.div`
     background-image: url(${(props) => props.url});
     background-repeat: no-repeat;
@@ -46,9 +44,14 @@ const BackgroundImg = styled.div`
     height: 500px;
     background-color: black;
 `;
+
 const ImgTeg = styled.div`
     width: 100%;
     height: 800px;
-    background-color: blueviolet;
     color: black;
+`;
+
+const Img = styled.img`
+    width: 100%;
+    height: 800px;
 `;
