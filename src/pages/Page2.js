@@ -1,14 +1,22 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "styled-components"
+import { Link } from "react-router-dom";
+
 import img1 from "../asset/page2/img1.png";
 import img2 from "../asset/page2/img2.png";
 import img3 from "../asset/page2/img3.jpg";
 import img4 from "../asset/page2/img1.jpg"
+import img5 from "../asset/page2/img5.jpeg"
+import img6 from "../asset/page2/img6.png"
+import iimg1 from "../asset/page2/iimg1.jpg"
+import iimg2 from "../asset/page2/iimg2.jpg"
+import iimg3 from "../asset/page2/iimg3.jpg"
 
 function Page2() {
     return (
         <Container>
             <Box>
+                <MainTitle>마음에 드는 옷을 <Purple>Click!</Purple></MainTitle>
                 <Title><Purple>#</Purple>코스튬</Title>
                 <ItemBox>
                     <Item><Image src={img1}></Image></Item>
@@ -21,26 +29,26 @@ function Page2() {
             </Box>
             <Line></Line>
             <Box>
-                <Title><Purple>#</Purple>편한옷</Title>
+                <Title><Purple>#</Purple>캐주얼</Title>
                 <ItemBox>
+                    <ItemLink to="/page3"><Image src={img4}></Image></ItemLink>
+                    <Item><Image src={img5}></Image></Item>
+                    <Item><Image src={img6}></Image></Item>
                     <Item><Image src={img4}></Image></Item>
-                    <Item><Image src={img2}></Image></Item>
-                    <Item><Image src={img3}></Image></Item>
-                    <Item><Image src={img4}></Image></Item>
-                    <Item><Image src={img2}></Image></Item>
-                    <Item><Image src={img3}></Image></Item>
+                    <Item><Image src={img5}></Image></Item>
+                    <Item><Image src={img6}></Image></Item>
                 </ItemBox>
             </Box>
             <Line></Line>
             <Box>
                 <Title><Purple>#</Purple>정장</Title>
                 <ItemBox>
-                    <Item><Image src={img1}></Image></Item>
-                    <Item><Image src={img2}></Image></Item>
-                    <Item><Image src={img3}></Image></Item>
-                    <Item><Image src={img1}></Image></Item>
-                    <Item><Image src={img2}></Image></Item>
-                    <Item><Image src={img3}></Image></Item>
+                    <Item><Image src={iimg1}></Image></Item>
+                    <Item><Image src={iimg2}></Image></Item>
+                    <Item><Image src={iimg3}></Image></Item>
+                    <Item><Image src={iimg1}></Image></Item>
+                    <Item><Image src={iimg2}></Image></Item>
+                    <Item><Image src={iimg3}></Image></Item>
                 </ItemBox>
             </Box>
         </Container>
@@ -57,7 +65,7 @@ const Container = styled.div`
     align-items: center;
     padding: 20px;
     padding-top: 50px;
-    background-color: lightgray;
+    background-color: #efddff;
 `;
 
 const Box = styled.div`
@@ -73,11 +81,18 @@ const Purple = styled.span`
     color: #8F71EA;
 `;
 const Title = styled.div`
+    font-weight: bold;
     background-color:white;
     font-size: max(1.2vw,20px);
-    padding: 1.2vw;
+    padding: 0.5vw 1.2vw;
     border-radius: 50px;
     box-shadow: 1px 1px 5px 2px rgba(0,0,0,.2);
+    margin: 20px;
+`;
+
+const MainTitle = styled.div`
+    font-size: max(1.5vw,30px);
+    padding: 1.2vw;
     margin: 20px;
 `;
 
@@ -95,9 +110,13 @@ const Item = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 `;
-
+const ItemLink = styled(Link)`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`;
 const Image = styled.img`
     width: 100%;
     height: 100%;
