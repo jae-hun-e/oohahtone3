@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import img from "../asset/mainpage.png";
+import { Link } from "react-router-dom";
 
 function Main() {
     return (
         <Box>
-            <ImgTeg>
+            <ImgTeg to="/Mypage">
                 <Img src={img} />
             </ImgTeg>
         </Box>
@@ -19,13 +20,14 @@ const Box = styled.div`
     flex-direction: column;
 `;
 
-const ImgTeg = styled.div`
+const ImgTeg = styled(Link)`
     width: 100%;
-    height: 800px;
-    color: black;
+    height: 100%;
+    min-height: 800px;
+    padding: 20px 5px;
 `;
 
 const Img = styled.img`
     width: 100%;
-    height: 800px;
+    object-fit: cover;
 `;

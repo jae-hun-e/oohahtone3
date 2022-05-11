@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import img1 from "../asset/page3/img1.jpg";
-function Page3() {
+function Buy() {
     return (
         <Component>
             <ContentBox>
@@ -21,7 +21,7 @@ function Page3() {
                     </Info>
                     <Pay>
                         <Period>대여 기간 <span role="img" aria-label="calendar">📅</span></Period>
-                        <Slink to="/page4">결제 하기</Slink>
+                        <Slink to="/Shipping">결제 하기</Slink>
                         <Basket>장바구니</Basket>
                     </Pay>
                 </InfoComponent>
@@ -30,7 +30,7 @@ function Page3() {
     );
 }
 
-export default Page3;
+export default Buy;
 
 //화면 전체 박스
 const Component = styled.div`
