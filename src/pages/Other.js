@@ -12,26 +12,28 @@ import iimg1 from "../asset/page2/iimg1.jpg"
 import iimg2 from "../asset/page2/iimg2.jpg"
 import iimg3 from "../asset/page2/iimg3.jpg"
 
-function Page2() {
+function Other() {
+    const images1 = [img1, img2, img3];
+    // const images2 = [img4, img5, img6];
+    const images3 = [iimg1, iimg2, iimg3];
     return (
         <Container>
             <Box>
                 <MainTitle>마음에 드는 옷을 <Purple>Click!</Purple></MainTitle>
-                <Title><Purple>#</Purple>코스튬</Title>
+                <Title>
+                    <Purple>#</Purple>코스튬
+                </Title>
                 <ItemBox>
-                    <Item><Image src={img1}></Image></Item>
-                    <Item><Image src={img2}></Image></Item>
-                    <Item><Image src={img3}></Image></Item>
-                    <Item><Image src={img1}></Image></Item>
-                    <Item><Image src={img2}></Image></Item>
-                    <Item><Image src={img3}></Image></Item>
+                    {[0, 1].map(() => images1.map((img) => <Image src={img} />))}
                 </ItemBox>
             </Box>
             <Line></Line>
             <Box>
-                <Title><Purple>#</Purple>캐주얼</Title>
+                <Title>
+                    <Purple>#</Purple>편한옷
+                </Title>
                 <ItemBox>
-                    <ItemLink to="/page3"><Image src={img4}></Image></ItemLink>
+                    <ItemLink to="/Buy"><Image src={img4}></Image></ItemLink>
                     <Item><Image src={img5}></Image></Item>
                     <Item><Image src={img6}></Image></Item>
                     <Item><Image src={img4}></Image></Item>
@@ -41,21 +43,18 @@ function Page2() {
             </Box>
             <Line></Line>
             <Box>
-                <Title><Purple>#</Purple>정장</Title>
+                <Title>
+                    <Purple>#</Purple>정장
+                </Title>
                 <ItemBox>
-                    <Item><Image src={iimg1}></Image></Item>
-                    <Item><Image src={iimg2}></Image></Item>
-                    <Item><Image src={iimg3}></Image></Item>
-                    <Item><Image src={iimg1}></Image></Item>
-                    <Item><Image src={iimg2}></Image></Item>
-                    <Item><Image src={iimg3}></Image></Item>
+                    {[0, 1].map(() => images3.map((img) => <Image src={img} />))}
                 </ItemBox>
             </Box>
         </Container>
     );
 }
 
-export default Page2;
+export default Other;
 
 const Container = styled.div`
     font-family: Arial, Helvetica, sans-serif;

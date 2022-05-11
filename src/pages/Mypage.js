@@ -9,47 +9,74 @@ import img4 from "../asset/page1/img4.jpg";
 import img5 from "../asset/page1/img5.jpg";
 import img6 from "../asset/page1/img6.jpg";
 
-function Page1() {
+function Mypage() {
     return (
         <Container>
-
             <UserBox>
                 <UserImage>
                     <Profile src={img0}></Profile>
                 </UserImage>
                 <UserInfo>
-                    <UserName>
-                        김옷장 님의 옷장
-                    </UserName>
+                    <UserName>김옷장 님의 옷장</UserName>
                     <Info>
                         <Content>
-                            <span role="img" aria-label="cloth">👚</span> 12
+                            <span role="img" aria-label="cloth">
+                                👚
+                            </span>{" "}
+                            12
                         </Content>
                         <Content>
-                            <span role="img" aria-label="heart">🖤</span> 54
+                            <span role="img" aria-label="heart">
+                                🖤
+                            </span>{" "}
+                            54
                         </Content>
                     </Info>
                 </UserInfo>
             </UserBox>
             <ItemBox>
-                <Item><Image src={img1}></Image></Item>
-                <Item><Image src={img2}></Image></Item>
-                <Item><Image src={img3}></Image></Item>
-                <Item><Image src={img4}></Image></Item>
-                <Item><Image src={img5}></Image></Item>
-                <Item><Image src={img6}></Image></Item>
-                <Item><Image src={img1}></Image></Item>
-                <Item><Image src={img2}></Image></Item>
-                <Item><Image src={img3}></Image></Item>
-                <Item><Image src={img4}></Image></Item>
-                <Item><Image src={img5}></Image></Item>
-                <Item><Image src={img6}></Image></Item>
+                <Item>
+                    <Image src={img1}></Image>
+                </Item>
+                <Item>
+                    <Image src={img2}></Image>
+                </Item>
+                <Item>
+                    <Image src={img3}></Image>
+                </Item>
+                <Item>
+                    <Image src={img4}></Image>
+                </Item>
+                <Item>
+                    <Image src={img5}></Image>
+                </Item>
+                <Item>
+                    <Image src={img6}></Image>
+                </Item>
+                <Item>
+                    <Image src={img1}></Image>
+                </Item>
+                <Item>
+                    <Image src={img2}></Image>
+                </Item>
+                <Item>
+                    <Image src={img3}></Image>
+                </Item>
+                <Item>
+                    <Image src={img4}></Image>
+                </Item>
+                <Item>
+                    <Image src={img5}></Image>
+                </Item>
+                <Item>
+                    <Image src={img6}></Image>
+                </Item>
             </ItemBox>
         </Container>
     );
 }
 
-export default Page1;
+export default Mypage;
 
 const Container = styled.div`
     font-family: Arial, Helvetica, sans-serif;
@@ -59,12 +86,12 @@ const Container = styled.div`
     align-items: center;
     padding: 20px;
     padding-top: 50px;
-    background-color: #8F71EA;
+    background-color: #8f71ea;
     padding-bottom: 50px;
 `;
 
 const UserBox = styled.div`
-    background-color: #8F71EA;
+    background-color: #8f71ea;
     height: match-content;
     width: 70%;
     max-width: 800px;
@@ -80,7 +107,7 @@ const UserImage = styled.div`
     border-radius: 100px;
     background-color: lightgray;
     margin: 20px;
-    box-shadow: 10px 5px 5px 1px rgba(0,0,0,.2);
+    box-shadow: 10px 5px 5px 1px rgba(0, 0, 0, 0.2);
     margin-bottom: 30px;
 `;
 
@@ -96,7 +123,7 @@ const UserInfo = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #8F71EA;
+    background-color: #8f71ea;
 `;
 
 const UserName = styled.div`
@@ -119,7 +146,7 @@ const ItemBox = styled.div`
     display: grid;
     width: 70%;
     max-width: 1080px;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 2vw;
 `;
 

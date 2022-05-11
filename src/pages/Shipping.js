@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import img from "../asset/mainpage.png";
+import img from "../asset/shipping.png";
 
-function MainPage() {
+function Shipping() {
     return (
         <Box>
             <ImgTeg>
@@ -12,7 +12,8 @@ function MainPage() {
     );
 }
 
-export default MainPage;
+export default Shipping;
+
 const Box = styled.div`
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
@@ -21,11 +22,12 @@ const Box = styled.div`
 
 const ImgTeg = styled.div`
     width: 100%;
-    height: 800px;
-    color: black;
+    height: 100%;
+    min-height: 800px;
+    padding: 20px 5px;
 `;
 
 const Img = styled.img`
     width: 100%;
-    height: 800px;
+    object-fit: cover;
 `;
