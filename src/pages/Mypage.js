@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+import { useRecoilState } from "recoil";
 import styled from "styled-components";
-//import {link} from 'react-router-dom';
+
 import img0 from "../asset/page1/img0.jpg";
 import img1 from "../asset/page1/img1.jpg";
 import img2 from "../asset/page1/img2.jpg";
@@ -9,7 +10,51 @@ import img4 from "../asset/page1/img4.jpg";
 import img5 from "../asset/page1/img5.jpg";
 import img6 from "../asset/page1/img6.jpg";
 
+import { modeChange } from "../atom/Atom";
+import Modal from "react-modal";
+
+const ThemeDiv = styled.div`
+    display: flex;
+    position: relative;
+    flex-direction: row;
+`;
+const ChangeTheme = styled.div`
+    position: absolute;
+    top: 10px;
+    right: -150px;
+    background-color: wheat;
+    width: 70px;
+    height: 20px;
+    text-align: center;
+    border-radius: 20px;
+`;
+
+const ColorList = styled.div`
+    display: flex;
+    gap: 10px;
+`;
+const Color = styled.div`
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: ${(props) => props.color};
+`;
+
 function Mypage() {
+    const [theme, setTheme] = useRecoilState(modeChange);
+    const color = 0;
+    const colorList = ["whitesmoke", "#212121", "#e4f211", "#4691f8", "#8f71ea"];
+
+    const [modelOpen, setModel] = useState(false);
+    const onClicklModel = () => {
+        setModel(!modelOpen);
+    };
+
+    const changeColor = (idx) => {
+        setTheme(idx);
+    };
+
+    // const onClickModal =
     return (
         <Container>
             <UserBox>
@@ -17,18 +62,53 @@ function Mypage() {
                     <Profile src={img0}></Profile>
                 </UserImage>
                 <UserInfo>
-                    <UserName>김옷장 님의 옷장</UserName>
+                    <ThemeDiv>
+                        <UserName>김옷장 님의 옷장</UserName>
+                        <ChangeTheme onClick={onClicklModel}>
+                            테마변경
+                            <Modal
+                                isOpen={modelOpen}
+                                style={{
+                                    overlay: {
+                                        position: "fixed",
+                                        backgroundColor: "rgba(0, 0, 0, 0.5)",
+                                        padding: "20% 0 0 65%",
+                                    },
+                                    content: {
+                                        position: "relative",
+                                        width: "20vw",
+                                        height: "20vw",
+                                        right: "200px",
+                                        border: "1px solid #ccc",
+                                        background: "rgba(255, 255, 255, 0.8)",
+                                        borderRadius: "20px",
+                                        padding: "20px",
+                                    },
+                                }}
+                            >
+                                <ColorList>
+                                    {colorList.map((color, idx) => (
+                                        <Color
+                                            color={color}
+                                            num={idx}
+                                            onClick={() => changeColor(idx)}
+                                        />
+                                    ))}
+                                </ColorList>
+                            </Modal>
+                        </ChangeTheme>
+                    </ThemeDiv>
                     <Info>
                         <Content>
                             <span role="img" aria-label="cloth">
                                 👚
-                            </span>{" "}
+                            </span>
                             12
                         </Content>
                         <Content>
                             <span role="img" aria-label="heart">
                                 🖤
-                            </span>{" "}
+                            </span>
                             54
                         </Content>
                     </Info>
@@ -86,12 +166,12 @@ const Container = styled.div`
     align-items: center;
     padding: 20px;
     padding-top: 50px;
-    background-color: #8f71ea;
+    background-color: ${(props) => props.theme.bgColor};
     padding-bottom: 50px;
 `;
 
 const UserBox = styled.div`
-    background-color: #8f71ea;
+    background-color: ${(props) => props.theme.bgColor};
     height: match-content;
     width: 70%;
     max-width: 800px;
@@ -123,12 +203,13 @@ const UserInfo = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #8f71ea;
+    background-color: ${(props) => props.theme.bgColor};
 `;
 
 const UserName = styled.div`
     font-weight: bold;
     font-size: 45pt;
+    color: ${(props) => props.theme.textColor};
 `;
 
 const Info = styled.div`

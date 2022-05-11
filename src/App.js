@@ -4,13 +4,38 @@ import { createGlobalStyle } from "styled-components";
 import { ThemeProvider } from "styled-components";
 import { useRecoilValue } from "recoil";
 import { modeChange } from "./atom/Atom";
-import { darkTheme, lightTheme } from "./theme/Thems";
+import {
+    lightTheme,
+    darkTheme,
+    yellowTheme,
+    blueTheme,
+    purpleTheme,
+} from "./theme/Thems";
 
 function App() {
-    const mode = useRecoilValue(modeChange);
+    const Theme = useRecoilValue(modeChange);
+    let mode = lightTheme;
+
+    switch (Theme) {
+        case 0:
+            mode = lightTheme;
+            break;
+        case 1:
+            mode = darkTheme;
+            break;
+        case 2:
+            mode = yellowTheme;
+            break;
+        case 3:
+            mode = blueTheme;
+            break;
+        case 4:
+            mode = purpleTheme;
+            break;
+    }
     return (
         <>
-            <ThemeProvider theme={mode ? darkTheme : lightTheme}>
+            <ThemeProvider theme={mode}>
                 <GlobalStyle />
                 <Routers />
             </ThemeProvider>
@@ -75,7 +100,7 @@ table {
 }
 body{
   /* font-family: 'Nanum Brush Script', cursive; */
-  background-color: ${(props) => props.theme.bgColor};
+  /* background-color: ${(props) => props.theme.bgColor}; */
   color: ${(props) => props.theme.textColor};
   line-height: 1.2;
 }
