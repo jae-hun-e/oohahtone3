@@ -1,15 +1,21 @@
 import React from "react";
 import styled from "styled-components";
-import {link} from 'react-router-dom';
+//import {link} from 'react-router-dom';
+import img0 from "../asset/page1/img0.jpg";
+import img1 from "../asset/page1/img1.jpg";
+import img2 from "../asset/page1/img2.jpg";
+import img3 from "../asset/page1/img3.jpg";
+import img4 from "../asset/page1/img4.jpg";
+import img5 from "../asset/page1/img5.jpg";
+import img6 from "../asset/page1/img6.jpg";
 
 function Page1() {
-    const test = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
     return (
         <Container>
 
             <UserBox>
                 <UserImage>
-                    {/* 이미지 */}
+                    <Profile src={img0}></Profile>
                 </UserImage>
                 <UserInfo>
                     <UserName>
@@ -17,18 +23,27 @@ function Page1() {
                     </UserName>
                     <Info>
                         <Content>
-                            👚 12
+                            <span role="img" aria-label="cloth">👚</span> 12
                         </Content>
                         <Content>
-                            🖤 54
+                            <span role="img" aria-label="heart">🖤</span> 54
                         </Content>
                     </Info>
                 </UserInfo>
             </UserBox>
             <ItemBox>
-                {test.map((num, idx) => (
-                    <Item>{`item${idx + 1}`}</Item>
-                ))}
+                <Item><Image src={img1}></Image></Item>
+                <Item><Image src={img2}></Image></Item>
+                <Item><Image src={img3}></Image></Item>
+                <Item><Image src={img4}></Image></Item>
+                <Item><Image src={img5}></Image></Item>
+                <Item><Image src={img6}></Image></Item>
+                <Item><Image src={img1}></Image></Item>
+                <Item><Image src={img2}></Image></Item>
+                <Item><Image src={img3}></Image></Item>
+                <Item><Image src={img4}></Image></Item>
+                <Item><Image src={img5}></Image></Item>
+                <Item><Image src={img6}></Image></Item>
             </ItemBox>
         </Container>
     );
@@ -45,6 +60,7 @@ const Container = styled.div`
     padding: 20px;
     padding-top: 50px;
     background-color: #8F71EA;
+    padding-bottom: 50px;
 `;
 
 const UserBox = styled.div`
@@ -66,6 +82,13 @@ const UserImage = styled.div`
     margin: 20px;
     box-shadow: 10px 5px 5px 1px rgba(0,0,0,.2);
     margin-bottom: 30px;
+`;
+
+const Profile = styled.img`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 100px;
 `;
 
 const UserInfo = styled.div`
@@ -95,6 +118,7 @@ const Content = styled.div`
 const ItemBox = styled.div`
     display: grid;
     width: 70%;
+    max-width: 1080px;
     grid-template-columns: repeat(3,1fr);
     gap: 2vw;
 `;
@@ -104,11 +128,11 @@ const Item = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: white;
-    ::after{
-        display: flex;
-        content: "";
-        padding-bottom: 100%;
-    }
 `;
 
+const Image = styled.img`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+`;
