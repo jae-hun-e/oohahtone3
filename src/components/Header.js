@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import logo from "../asset/logo.png";
+import React from 'react';
+
 
 function Header() {
     return (
