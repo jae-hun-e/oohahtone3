@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Fade from "react-reveal/Fade";
-import img from "../asset/mainpage.png";
+import img from "../asset/shipping.png";
 
-function MainPage() {
+function Shipping() {
     return (
         <Box>
             <ImgTeg>
@@ -13,7 +12,8 @@ function MainPage() {
     );
 }
 
-export default MainPage;
+export default Shipping;
+
 const Box = styled.div`
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
