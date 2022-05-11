@@ -14,6 +14,9 @@ function Header() {
                         <Link to="/">GUIDE</Link>
                     </Btn>
                     <Btn>
+                        <Link to="/mainpage">MainPage</Link>
+                    </Btn>
+                    <Btn>
                         <Link to="/page1">MY</Link>
                     </Btn>
                     <Btn>
